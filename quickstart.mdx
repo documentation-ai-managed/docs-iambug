@@ -1,0 +1,143 @@
+---
+title: Quickstart Guide
+description: Get up and running with iambug by setting up your account and creating your first documentation space in under 5 minutes.
+---
+
+## Prerequisites
+
+<Callout kind="info">
+Before starting, ensure you have:
+- A modern web browser (Chrome, Firefox, Safari, or Edge)
+- An email address for account verification
+- No prior setup required
+</Callout>
+
+## Step-by-Step Setup
+
+Follow these steps to create your iambug account, set up a documentation space, add your first document, and customize it.
+
+<Steps>
+  <Step title="Sign Up for an Account" icon="user-plus">
+    Visit `https://app.iambug.com/signup` and enter your email, name, and a secure password.
+
+    Click **Create Account**. iambug sends a verification email—check your inbox and click the link to activate.
+
+    <Callout kind="tip">
+      Use a strong password with at least 12 characters, including uppercase, lowercase, numbers, and symbols.
+    </Callout>
+  </Step>
+
+  <Step title="Create Your First Documentation Space" icon="folder-plus">
+    After login, click **New Space** in the dashboard.
+
+    Enter a name like "My Project Docs", select **Public** or **Private** visibility, and choose a slug (e.g., `my-project-docs`).
+
+    Click **Create**. Your space appears in the sidebar.
+  </Step>
+
+  <Step title="Add and Edit Your First Document" icon="file-plus">
+    In your space, click **New Document**. Name it "Introduction".
+
+    Use the built-in MDX editor to add content. Here's a starter example:
+
+    <CodeGroup tabs="Markdown,Preview">
+    ````markdown
+    # Welcome to My Project
+
+    This is your first document in iambug.
+
+    ## Quick Features
+    - Easy editing
+    - Real-time previews
+    - Version history
+    ````
+
+    ````markdown
+    # Welcome to My Project
+
+    This is your first document in iambug.
+
+    ## Quick Features
+    • Easy editing
+    • Real-time previews
+    • Version history
+    ````
+    </CodeGroup>
+
+    Click **Publish** to make it live.
+  </Step>
+
+  <Step title="Customize Your Space" icon="settings">
+    Go to **Space Settings** > **Customization**.
+
+    Set your brand color to `#3B82F6`, upload a logo, and configure the navigation menu.
+
+    Save changes. Your space now reflects your branding.
+
+    <Image
+      src="https://via.placeholder.com/800x400/3B82F6/FFFFFF?text=Customized+Dashboard"
+      alt="Example of customized iambug documentation space dashboard"
+      width="800"
+      height="400"
+    />
+  </Step>
+</Steps>
+
+## Next Steps
+
+Explore more features to enhance your documentation.
+
+<Columns cols={3}>
+  <Card title="Advanced Editing" icon="edit-3" href="/guides/advanced-mdx">
+    Learn MDX components, custom themes, and embeds.
+  </Card>
+
+  <Card title="Collaboration" icon="users" href="/guides/sharing">
+    Invite team members and manage permissions.
+  </Card>
+
+  <Card title="SEO & Analytics" icon="trending-up" href="/guides/optimization">
+    Optimize for search engines and track views.
+  </Card>
+</Columns>
+
+<Tabs>
+  <Tab title="Troubleshooting" icon="help-circle">
+    <Expandable title="Common Issues" default-open="true">
+      **Document not publishing?** Check for syntax errors in MDX—use the preview pane.
+
+      **Space not visible?** Verify visibility settings in Space Settings.
+    </Expandable>
+  </Tab>
+
+  <Tab title="API Integration" icon="code">
+    Automate with our API:
+
+    <CodeGroup tabs="cURL,JavaScript">
+    ````bash
+    curl -X POST https://api.iambug.com/v1/spaces \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -H "Content-Type: application/json" \
+      -d '{"name": "New Space", "slug": "new-space"}'
+    ````
+
+    ````javascript
+    const response = await fetch('https://api.iambug.com/v1/spaces', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer YOUR_API_KEY',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: 'New Space',
+        slug: 'new-space',
+      }),
+    });
+    ````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="success">
+Congratulations! You've set up iambug. Share your space URL with your team and start documenting.
+</Callout>

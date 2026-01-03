@@ -1,0 +1,122 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to iambug, ensuring you stay informed about new features and fixes.
+---
+
+## Recent Updates
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Introduce real-time collaboration on documentation pages, allowing multiple users to edit simultaneously.
+- Add AI-powered content suggestions to help you draft sections faster.
+
+## Improvements
+
+- Enhance search functionality with fuzzy matching and full-text indexing for better results across your docs.
+- Optimize page load times by `>30%` through improved asset bundling.
+
+## Bug Fixes
+
+- Fix intermittent sync issues when editing large documents.
+- Resolve authentication errors during webhook deliveries.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Launch version history with diff views, so you can compare changes over time.
+- Integrate with GitHub for automatic documentation syncing from repositories.
+
+## Bug Fixes
+
+- Correct editor crashes when pasting content with malformed HTML.
+- Patch security vulnerability in public page sharing (CVE-2024-XXXX).
+
+## Improvements
+
+- Update UI components to match the new brand color `#3B82F6`.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## Initial Release
+
+- Core documentation editor with rich text and Markdown support.
+- Project organization with folders, tags, and permissions.
+- Public and private page publishing.
+
+## Breaking Changes
+
+- Initial schema migration required for existing data imports.
+
+</Update>
+
+## Upgrade Instructions
+
+Stay current with iambug by following these steps. You receive automatic notifications in your dashboard at `https://dashboard.example.com`.
+
+<Callout kind="info">
+  Always back up your projects before upgrading to avoid data loss.
+</Callout>
+
+<Steps>
+  <Step title="Check Compatibility" icon="check-circle">
+
+    Review the release notes above for breaking changes.
+
+  </Step>
+  <Step title="Update Client SDK" icon="download">
+
+    Use your preferred package manager to get the latest version.
+
+    <CodeGroup tabs="npm,yarn">
+      ````bash
+      npm install iambug@latest
+      ````
+
+      ````bash
+      yarn add iambug@latest
+      ````
+    </CodeGroup>
+
+  </Step>
+  <Step title="Run Migration" icon="settings">
+
+    Execute the migration script if required for your version.
+
+    ````bash
+    npx iambug migrate --project your-project-id
+    ````
+
+  </Step>
+  <Step title="Verify" icon="zap">
+
+    Test key features like editing and sharing in a staging environment.
+
+  </Step>
+</Steps>
+
+## Upcoming Roadmap
+
+Discover what's next for iambug. You can vote on features in our feedback portal.
+
+<Columns cols={3}>
+  <Card title="Q4 2024: Integrations" icon="plug" href="https://dashboard.example.com/feedback">
+    Add Slack, Discord, and Notion integrations for seamless workflows.
+  </Card>
+  <Card title="Q1 2025: AI Enhancements" icon="bot" href="https://dashboard.example.com/feedback">
+    Advanced AI for auto-generating docs from code comments and APIs.
+  </Card>
+  <Card title="Q2 2025: Enterprise" icon="shield" href="https://dashboard.example.com/feedback">
+    SSO, audit logs, and unlimited storage for teams.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Subscribe to updates at `https://dashboard.example.com/notifications` to get email alerts on new releases.
+</Callout>

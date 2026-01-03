@@ -1,0 +1,121 @@
+---
+title: Key Features
+description: Explore iambug's powerful features for managing and sharing project documentation seamlessly across teams.
+---
+
+## Overview
+
+iambug empowers you to create, organize, and share project documentation with advanced tools designed for teams. You get full control over your docs space, from powerful search capabilities to seamless integrations and real-time editing. Dive into the key features below to see how iambug streamlines your workflow.
+
+<Columns cols={2}>
+  <Card title="Advanced Search" icon="search" href="#advanced-search">
+    Find exactly what you need with full-text search and smart filters.
+  </Card>
+  <Card title="Version Control Integration" icon="git-branch" href="#version-control">
+    Sync your docs with GitHub or GitLab repositories effortlessly.
+  </Card>
+  <Card title="Real-time Collaboration" icon="users" href="#collaboration">
+    Edit docs together in real time, like Google Docs but for MDX.
+  </Card>
+  <Card title="Export & Publishing" icon="share-2" href="#export-publishing">
+    Publish to web, PDF, or custom domains with one click.
+  </Card>
+</Columns>
+
+## Advanced Search and Navigation Tools
+
+Navigate large documentation spaces quickly with iambug's advanced search. You can perform full-text searches across all pages, filter by tags, or use advanced operators like `tag:api` or `path:/guides/*`.
+
+<Tabs>
+  <Tab title="Basic Search" icon="search">
+    Simply type keywords in the search bar to get instant results.
+  </Tab>
+  <Tab title="Advanced Filters" icon="filter">
+    Combine operators for precise results:
+
+    ```
+    tag:feature since:2024-01-01
+    ```
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Pro tip: Pin frequently searched pages to your navigation sidebar for one-click access.
+</Callout>
+
+## Integration with Version Control Systems
+
+Connect iambug to your GitHub or GitLab repo to keep docs in sync with code changes. You configure webhooks to auto-publish updates on merges.
+
+<Steps>
+  <Step title="Connect Repository" icon="git-branch">
+    Go to Settings > Integrations and authorize your GitHub account.
+  </Step>
+  <Step title="Set Webhook" icon="link">
+    Add this webhook URL to your repo: `https://api.iambug.com/webhooks/github`
+  </Step>
+  <Step title="Configure Events" icon="settings">
+    Enable push and pull request events for automatic syncs.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="GitHub Actions, GitLab CI">
+  ```yaml
+  name: Publish Docs
+  on: [push]
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - name: Deploy to iambug
+          run: curl -X POST https://api.iambug.com/deploy \\
+            -H "Authorization: Bearer YOUR_TOKEN" \\
+            -d '{"repo": "your-org/repo"}'
+  ```
+  ```yaml
+  deploy_docs:
+    stage: deploy
+    script:
+      - curl -X POST https://api.iambug.com/deploy
+          -H "Authorization: Bearer $IAMBUG_TOKEN"
+          -d "{\"repo\": \"$CI_PROJECT_PATH\"}"
+  ```
+</CodeGroup>
+
+## Real-time Collaboration Editing
+
+Invite team members to edit docs simultaneously. Changes appear instantly, with cursor tracking and inline comments.
+
+<Expandable title="Collaboration Permissions" default-open="true">
+  You control access levels:
+
+  | Role       | View | Edit | Publish |
+  |------------|------|------|---------|
+  | Viewer     | ✅   | ❌   | ❌      |
+  | Editor     | ✅   | ✅   | ❌      |
+  | Admin      | ✅   | ✅   | ✅      |
+</Expandable>
+
+<Callout kind="info">
+  All edits are versioned—revert changes anytime via the history panel.
+</Callout>
+
+## Export and Publishing Options
+
+Share your docs widely. Export to PDF, HTML, or publish to a custom subdomain.
+
+<Tabs>
+  <Tab title="Static Export" icon="download">
+    ```
+    npx iambug export --format=pdf --output=./docs/
+    ```
+  </Tab>
+  <Tab title="Custom Domain" icon="globe">
+    In Settings > Publishing, add your domain and get SSL-ready links.
+  </Tab>
+</Tabs>
+
+Ready to try these features? Start with [Quickstart](/quickstart) for hands-on setup.
+
+---
